@@ -30,13 +30,13 @@ Este é o starter de templates da nossa plataforma Convite Digital. O código é
 4. **Estrutura de pastas**
    - O tema usa a seguinte estrutura de pastas
      - /theme-name
-     - ├── components
+     - ├── /components
      - │ ├── ... (seus componentes personalizados)
      - │
-     - ├── assets
+     - ├── /assets
      - │ ├── ... (seus recursos, como imagens, fontes, etc.)
      - │
-     - ├── utils
+     - ├── /utils
      - │ ├── ... (seus utilitários)
      - │
      - ├── index.tsx (Arquivo principal do tema)
