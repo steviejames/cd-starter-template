@@ -29,7 +29,7 @@ Este é o starter de templates da nossa plataforma Convite Digital. O código é
 
 4. **Estrutura de pastas**
    - O tema usa a seguinte estrutura de pastas
-     -/theme-name
+     - /theme-name
      --├── components
      --│ ├── ... (seus componentes personalizados)
      --│
