@@ -50,7 +50,8 @@ Este é o starter de templates da nossa plataforma Convite Digital. O código é
    - Clique em **Publicar**.
    - O tema será publicado apos a validação da plataforma e verificação da nossa equipe.
    - Após a publicação, o tema estará disponível para uso.
-     Note:
+
+     **Observações:**
      - O tema deve ser enviado como uma pasta inteira na plataforma Convite Digital.
      - O arquivo principal do tema deve ser renomeado para `index.tsx` ou `index.jsx`.
      - Certifique-se de que todos os assets necessários para o tema estejam na mesma pasta.
@@ -58,4 +59,4 @@ Este é o starter de templates da nossa plataforma Convite Digital. O código é
        -A pasta deve ser renomeada para o nome do tema.
 
 7. **Implantação:**
-   - Após personalizar o template, você pode implantá-lo na plataforma Convite Digital para criar e compartilhar convites digitais.
+   - Após personalizar o template, e realizar o envio para a plataforma **Convite Digital**. Os utilizadores podem criar e compartilhar convites digitais usando o seu tema.
