@@ -40,9 +40,6 @@ Este é o starter de templates da nossa plataforma Convite Digital. O código é
      - │ ├── ... (seus utilitários)
      - │
      - ├── index.tsx (Arquivo principal do tema)
-5. **Teste o Convite Digital:**
-
-   - Execute o aplicativo para testar o convite digital gerado com os detalhes do evento.
 
 6. **Upload do Tema:**
 
