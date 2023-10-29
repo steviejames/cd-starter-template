@@ -1,44 +1,47 @@
 import React from "react";
-import Theme from "./theme-name/page";
+import Theme from "../template/theme-name";
 //Dummy Theme
 const theme = {
   background: "#fff",
 };
 
 //Dummy Data
-const event = {
-  id: "string",
-  title: "Festa da Joana",
+const myEvent = {
+  id: "12345",
+  title: "Festa de Aniversário",
   active: true,
-  isPaid: true,
-  date: new Date("12/12/2023"),
-  headline: "Sangraaaaa",
-  time: "string",
-  background: "#fff",
+  isPaid: false,
+  date: new Date("2023-11-15"),
+  headline: "Venha comemorar conosco!",
+  time: "19:00",
   theme: {
-    background: "#fff",
-    color: "#000",
-    name: "string",
-    title: "string",
-    bgColor: "#000",
-    preview: "string",
-    category: "string",
-    type: "string",
+    background: "https://example.com/party-background.jpg",
+    color: "#FFA500",
+    name: "Festa Colorida",
+    title: "Convite Especial",
+    bgColor: "#FFA500",
+    preview: "https://example.com/party-preview.jpg",
+    category: "Aniversário",
+    type: "Digital",
   },
-  name: "Festa da Joana",
+  background: "https://example.com/event-background.jpg",
+  name: "Maria's 30th Birthday",
   age: 30,
-  category: "string",
-  address: "string",
-  place: "string",
-  infoline: "string",
-  isForAnyone: false,
-  host: "Joana",
-  dresscode: "Tuo vermelho",
+  category: ["Aniversário"],
+  address: "123 Main Street",
+  place: "Salão de Festas",
+  infoline: "Traje Casual",
+  isForAnyone: true,
+  host: "Maria Silva",
+  dresscode: "Casual",
 };
+
+// Agora, você pode usar o objeto "myEvent" para renderizar o convite digital com base nos detalhes fornecidos.
+
 function page() {
   return (
     <div>
-      <Theme data={event} />
+      <Theme data={myEvent} />
     </div>
   );
 }

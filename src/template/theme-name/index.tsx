@@ -22,7 +22,7 @@ type InvitationDetails = {
   background: string;
   name: string;
   age: number;
-  category: string;
+  category: Array<string>;
   address: string;
   place: string;
   infoline: string;
@@ -69,7 +69,7 @@ function TemplateName({ data: event }: { data: InvitationDetails }) {
     >
       {
         //create your awesome template in this área
-        <main className="absolute h-full bg-black/50 w-full p-8 flex items-center justify-around flex-col">
+        <main className="absolute h-full bg-black/90 w-full p-8 flex items-center justify-around flex-col">
           <div className="border-4 w-full max-w-2xl p-8 space-y-6">
             <div className="flex justify-center items-center gap-x-4">
               <span className="h-1 w-full bg-white"></span>
@@ -84,6 +84,10 @@ function TemplateName({ data: event }: { data: InvitationDetails }) {
               {event?.name}
             </h1>
             <p className={`text-2xl text-center`}>{event?.headline}</p>
+          </div>
+          <div className="text-center flex items-center gap-x-2">
+            <p>by</p>
+            <p>Convite Digital</p>
           </div>
         </main>
       }

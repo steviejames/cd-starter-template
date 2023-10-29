@@ -19,19 +19,32 @@ Este é o starter de templates da nossa plataforma Convite Digital. O código é
 
 2. **Personalização do Template:**
 
-   - Abra o arquivo `page.tsx` contido na pasta theme-name e edite de acordo com suas necessidades.
+   - Abra o arquivo `index.tsx` contido na pasta "template/theme-name" e edite de acordo com suas necessidades.
    - Os detalhes do evento, como título, data, tema e outros, são fornecidos como props no componente. Você pode personalizar o visual do convite digital usando esses detalhes.
+     -Altere o nome da pasta `theme-name` para o nome do seu tema, e corrija a importação no "arquivo" page.tsx da pasta app
 
 3. **Personalização do Estilo:**
 
    - O estilo do convite digital é definido no componente usando classes CSS e estilos inline. Você pode personalizar o estilo conforme desejado.
-   - As fontes utilizadas devem ser do google fonts. Para fontes próprias, você deve adicionar a fonte na pasta do tema e carregar usando a forma do Nextjs 13.5+ de lidar com fontes próprias.
 
-4. **Teste o Convite Digital:**
+4. **Estrutura de pastas**
+   - O tema usa a seguinte estrutura de pastas
+     /theme-name
+     ├── components
+     │ ├── ... (seus componentes personalizados)
+     │
+     ├── assets
+     │ ├── ... (seus recursos, como imagens, fontes, etc.)
+     │
+     ├── utils
+     │ ├── ... (seus utilitários)
+     │
+     ├── index.tsx (Arquivo principal do tema)
+5. **Teste o Convite Digital:**
 
    - Execute o aplicativo para testar o convite digital gerado com os detalhes do evento.
 
-5. **Upload do Tema:**
+6. **Upload do Tema:**
 
    - Faça o upload do tema na plataforma Convite Digital da seguinte maneira:
    - Acesse a plataforma Convite Digital.
@@ -48,5 +61,5 @@ Este é o starter de templates da nossa plataforma Convite Digital. O código é
      - Certifique-se de que o arquivo `index.tsx` ou `index.jsx` esteja na raiz da pasta do tema.
        -A pasta deve ser renomeada para o nome do tema.
 
-6. **Implantação:**
+7. **Implantação:**
    - Após personalizar o template, você pode implantá-lo na plataforma Convite Digital para criar e compartilhar convites digitais.
