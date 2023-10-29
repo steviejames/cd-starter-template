@@ -13,20 +13,19 @@ Este é o starter de templates da nossa plataforma Convite Digital. O código é
 1. **Clone/Download e inicialização do projeto:**
 
    - Clone ou faça o download deste repositório para o seu ambiente de desenvolvimento.
-     - Instale as dependências do projeto: -`npm install`
-   - Inicie o projeto: -`npm run dev`
-   - Abra o navegador e acesse: -`http://localhost:3000`
+     - Instale as dependências do projeto: `npm install`
+   - Inicie o projeto: `npm run dev`
+   - Abra o navegador e acesse: `http://localhost:3000`
 
 2. **Personalização do Template:**
 
    - Abra o arquivo `index.tsx` contido na pasta "template/theme-name" e edite de acordo com suas necessidades.
    - Os detalhes do evento, como título, data, tema e outros, são fornecidos como props no componente. Você pode personalizar o visual do convite digital usando esses detalhes.
-     -Altere o nome da pasta `theme-name` para o nome do seu tema, e corrija a importação no "arquivo" page.tsx da pasta app
+   - Altere o nome da pasta `theme-name` para o nome do seu tema, e corrija a importação no "arquivo" `page.tsx` da pasta app.
 
 3. **Personalização do Estilo:**
-
    - O estilo do convite digital é definido no componente usando classes CSS e estilos inline. Você pode personalizar o estilo conforme desejado.
-
+   - *Dica*: Para arquivos css crie como módulos na raiz do tema ex.: style.module.css. 
 4. **Estrutura de pastas**
    - O tema usa a seguinte estrutura de pastas
      - /theme-name
