@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Plataforma Convite Digital
 
-## Getting Started
+# Starter Template NextJs
 
-First, run the development server:
+## Instruções de Uso
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Descrição
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este é o starter de templates da nossa plataforma Convite Digital. O código é um componente React que pode ser personalizado para criar convites digitais. O template usa os detalhes do evento, como data, título e tema, para exibir um convite digital atraente.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Passos para Uso
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone/Download e inicialização do projeto:**
 
-## Learn More
+   - Clone ou faça o download deste repositório para o seu ambiente de desenvolvimento.
+     - Instale as dependências do projeto: -`npm install`
+   - Inicie o projeto: -`npm run dev`
+   - Abra o navegador e acesse: -`http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+2. **Personalização do Template:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - Abra o arquivo `page.tsx` contido na pasta theme-name e edite de acordo com suas necessidades.
+   - Os detalhes do evento, como título, data, tema e outros, são fornecidos como props no componente. Você pode personalizar o visual do convite digital usando esses detalhes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Personalização do Estilo:**
 
-## Deploy on Vercel
+   - O estilo do convite digital é definido no componente usando classes CSS e estilos inline. Você pode personalizar o estilo conforme desejado.
+   - As fontes utilizadas devem ser do google fonts. Para fontes próprias, você deve adicionar a fonte na pasta do tema e carregar usando a forma do Nextjs 13.5+ de lidar com fontes próprias.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Teste o Convite Digital:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   - Execute o aplicativo para testar o convite digital gerado com os detalhes do evento.
+
+5. **Upload do Tema:**
+
+   - Faça o upload do tema na plataforma Convite Digital da seguinte maneira:
+   - Acesse a plataforma Convite Digital.
+   - Vá para a área de **Editor**.
+   - Clique em **Upload Tema**.
+   - Selecione os arquivos do tema.
+   - Clique em **Publicar**.
+   - O tema será publicado apos a validação da plataforma e verificação da nossa equipe.
+   - Após a publicação, o tema estará disponível para uso.
+     Note:
+     - O tema deve ser enviado como uma pasta inteira na plataforma Convite Digital.
+     - O arquivo principal do tema deve ser renomeado para `index.tsx` ou `index.jsx`.
+     - Certifique-se de que todos os assets necessários para o tema estejam na mesma pasta.
+     - Certifique-se de que o arquivo `index.tsx` ou `index.jsx` esteja na raiz da pasta do tema.
+       -A pasta deve ser renomeada para o nome do tema.
+
+6. **Implantação:**
+   - Após personalizar o template, você pode implantá-lo na plataforma Convite Digital para criar e compartilhar convites digitais.
