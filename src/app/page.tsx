@@ -1,5 +1,5 @@
 import React from "react";
-import Theme from "../template/1";
+import Theme from "../template/8";
 //Dummy Theme
 const theme = {
   background: "#fff",
@@ -34,7 +34,6 @@ const myEvent = {
   dresscode: "Casual",
 };
 
-// Agora, você pode usar o objeto "myEvent" para renderizar o convite digital com base nos detalhes fornecidos.
 
 function page() {
   return (
