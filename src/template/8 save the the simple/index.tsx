@@ -1,15 +1,11 @@
 "use client";
 "./style.module.css";
 import React from "react";
-import localFont from "next/font/local";
 import { FiArrowDownCircle } from "react-icons/fi";
 import { InvitationDetails } from "@/types/global";
 function TemplateName({ data: event }: { data: InvitationDetails }) {
   // Define default theme data
-  const defaultThemeData = {
-    background: "",
-    color: "",
-  };
+ 
   const { theme } = event;
 
   // Check if the background is a color (starts with "#")

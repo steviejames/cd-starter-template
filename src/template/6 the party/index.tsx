@@ -10,17 +10,17 @@ function ThePartyTemplate({ data: event }: { data: any }) {
   const year = date.getFullYear();
   const month = date.getUTCMonth();
   const monthDay = date.getUTCDate().toString().padStart(2, "0");
-console.log(date.getMonth())
   return (
     <div
       className={`relative min-h-[100vh] h-full  p-10 flex flex-1  flex-col text-white items-center justify-center  `}
       style={{
-        background: isColor ? theme.background : `url(${theme.background})`,
+        background: isColor ? theme.background : `url(https://firebasestorage.googleapis.com/v0/b/convite-digital.appspot.com/o/bg%2Fcroudy.jpg?alt=media&token=67584aae-1346-496f-9971-0c941c0f8384)`,
         backgroundOrigin: "border-box",
+        backgroundPosition:"center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}>
-      <div className='absolute h-full bg-black/80 w-full p-8 flex items-center justify-around flex-col'>
+      <div className='absolute h-full bg-black/50 w-full p-8 flex items-center justify-around flex-col'>
         <div className='border-4 w-full max-w-2xl p-8 space-y-6'>
           <div className='flex justify-center items-center gap-x-4'>
             <span className='h-1 w-full bg-white'></span>

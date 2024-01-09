@@ -1,6 +1,6 @@
 import Template1 from "./1 suzana"
 import Template2 from "./2 balloons"
-import Template3 from "./3 cerimony"
+import Template3 from "./3 pink and black"
 import Template4 from "./4 flower"
 import Template5 from "./5 beers"
 import Template6 from "./6 the party"
@@ -15,7 +15,7 @@ export default [{
     name: "Balões dourados",
     component: Template2
 }, {
-    name: "Cerimónia amarela",
+    name: "Let's party Rosa e Preto",
     component: Template3
 }, {
     name: "Flores esverdeadas",

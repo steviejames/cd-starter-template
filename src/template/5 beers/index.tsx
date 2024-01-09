@@ -30,7 +30,7 @@ function DefaultPage({ data }: { data: any }) {
     <div
       className={`relative min-h-[100vh]  p-10 flex flex-1  flex-col text-white items-center justify-center ${grenze.className} `}
       style={{
-        backgroundImage: `url()`,
+        backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/convite-digital.appspot.com/o/bg%2Fblack-rock.jpg?alt=media&token=caf66b25-0686-46ac-94c8-b6aa762924da)`,
         backgroundColor: bg,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

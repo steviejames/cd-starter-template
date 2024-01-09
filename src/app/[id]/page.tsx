@@ -29,7 +29,7 @@ const myEvent = {
 
 
 function page({params}:{params:{id:number}}) {
-  const Theme = templates[params.id].component
+  const Theme = templates[params.id]?.component
   if(Theme)
   return (
     
