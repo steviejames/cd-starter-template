@@ -3,19 +3,8 @@
 import React from "react";
 import localFont from "next/font/local";
 import { FiArrowDownCircle } from "react-icons/fi";
-function TemplateName({ data: event }: { data: any }) {
-  // Define default theme data
-  const defaultThemeData = {
-    background: "",
-    color: "",
-  };
-  const { theme } = event;
-
-  // Check if the background is a color (starts with "#")
-  const isColor = theme?.background.includes("#", 0);
-
-  // Function to scroll to the bottom of the page
-
+function TemplateName({ event }: { event: InvitationDetails }) {
+ 
   // Extract day, month, and year from the event date
   const day = new Date(event?.date).getDay();
   const month = new Date(event?.date).getMonth() + 1;
@@ -42,7 +31,7 @@ function TemplateName({ data: event }: { data: any }) {
          </div>
           </div>
           
-            <ScrollToBottom  />
+         
         </main>
       </div>
      
@@ -52,19 +41,3 @@ function TemplateName({ data: event }: { data: any }) {
 
 export default TemplateName;
 
-function ScrollToBottom({ color, ...props }: { color?: string , props?:any}) {
-  const goToBottom = () => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth",
-    });
-  };
-
-  return (
-    <div
-      onClick={goToBottom}
-      className='  animate-bounce cursor-pointer bottom-0'>
-      <FiArrowDownCircle  {...props} size={30} color={color ? color : "white"} />
-    </div>
-  );
-}

@@ -2,17 +2,8 @@
 "./style.module.css";
 import React from "react";
 import { FiArrowDownCircle } from "react-icons/fi";
-import { InvitationDetails } from "@/types/global";
-function TemplateName({ data: event }: { data: InvitationDetails }) {
-  // Define default theme data
- 
-  const { theme } = event;
-
-  // Check if the background is a color (starts with "#")
-  const isColor = theme?.background.includes("#", 0);
-
-  // Function to scroll to the bottom of the page
-
+function SimpleSaveTheDate({ event }: { event: InvitationDetails }) {
+  
   // Extract day, month, and year from the event date
   const day = new Date(event?.date).getDay();
   const month = new Date(event?.date).getMonth() + 1;
@@ -60,21 +51,5 @@ const bg = "#f6f6f6"
   );
 }
 
-export default TemplateName;
+export default SimpleSaveTheDate;
 
-function ScrollToBottom({ color, ...props }: { color?: string , props?:any}) {
-  const goToBottom = () => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth",
-    });
-  };
-
-  return (
-    <div
-      onClick={goToBottom}
-      className=' absolute animate-bounce cursor-pointer bottom-0'>
-      <FiArrowDownCircle  {...props} size={30} color={color ? color : "white"} />
-    </div>
-  );
-}

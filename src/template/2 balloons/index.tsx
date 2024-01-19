@@ -1,4 +1,3 @@
-import { InvitationDetails } from "@/types/global";
 import React from "react";
 import { Allura } from "next/font/google";
 import { week } from "@/utils/constant";
@@ -7,17 +6,13 @@ import { FaHeart } from "react-icons/fa";
 // Define a functional component called "TemplateName" that takes an "event" object as a prop
 
 const mainFont = Allura({weight:"400", subsets:["latin"]})
-function TemplateName({ data: event }: { data: InvitationDetails }) {
+function TemplateName({  event }: { event:  InvitationDetails }) {
   // Define default theme data
   const defaultThemeData = {
     background: "",
     color: "",
   };
-  const { theme } = event;
-
-  // Check if the background is a color (starts with "#")
-  const isColor = theme?.background.includes("#", 0);
-
+ 
   // Function to scroll to the bottom of the page
   const goToBottom = () => {
     window.scrollTo({
@@ -41,10 +36,10 @@ function TemplateName({ data: event }: { data: InvitationDetails }) {
    <div className=' pt-28  w-full h-full flex flex-col'>
      <div className={`justify-center p-20 text-[#9A5237] bg-gradient-to-tr from-[#f2ceca] via-white to-[#f3cecb] shadow  max-w-[400px] flex flex-col  overflow h-[400px] mx-auto  rounded-full text-center ${mainFont.className}`}>
        <h1 className='text-9xl font-bold'>{event.age}</h1>
-       <h2 className='text-4xl italic font-[inter]'>anos da</h2>
+       <h2 className='text-5xl '>anos da</h2>
        <h1 className='text-8xl font-bold'>{event.host.split(" ")[0]}</h1>
      </div>
-     <div className="text-gray-900 lg:text-white pb-8  space-y-6 max-w-sm mx-auto flex flex-col items-center justify-center pt-8">
+     <div className="text-gray-900 md:my-8 md:border-8 border-[#9A5237] md:shadow-md md:bg-[#f7e8e3] rounded md:text-black pb-8  space-y-4 max-w-sm mx-auto flex flex-col items-center justify-center pt-8">
        <p className=" text-xl text-center">Convido você para comemorar este dia incrível comigo!</p>
        <div className="flex items-center justify-center gap-4 font-bold text-xl">
          <p className="">{monthDay}/{month +1}</p>
@@ -55,7 +50,7 @@ function TemplateName({ data: event }: { data: InvitationDetails }) {
        </div>
        <p className="text-center text-xl">{event.address} - {event.place}</p>
 
-       <p  className={`${mainFont.className} lg:text-white text-3xl italic font-semibold text-[#9A5237]`}>{event.subtitle}</p>
+       <p  className={`${mainFont.className}  text-3xl italic font-semibold text-[#9A5237]`}>{event.subtitle}</p>
      </div>
    </div>
  </div>

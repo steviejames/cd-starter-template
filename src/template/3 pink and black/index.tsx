@@ -3,13 +3,12 @@
 import React from "react";
 import { Leckerli_One, Montserrat } from "next/font/google";
 import { FiArrowDownCircle } from "react-icons/fi";
-import { InvitationDetails } from "@/types/global";
 import frame from "./frame.png";
 import Image from "next/image";
 import { months, week } from "@/utils/constant";
 const titleFont = Leckerli_One({ weight: "400", subsets: ["latin"] });
 const montserrat = Montserrat({subsets:["latin"]})
-function TemplateName({ data: event }: { data: InvitationDetails }) {
+function TemplateName({ event }: { event: InvitationDetails }) {
   // Define default theme data
 
   // Extract day, month, and year from the event date

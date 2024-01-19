@@ -6,19 +6,12 @@ import { Fira_Sans } from "next/font/google";
 import Image from "next/image";
 import image from "./suzana.png";
 import { FiArrowDownCircle } from "react-icons/fi";
-import { InvitationDetails } from "@/types/global";
 const featherly = localFont({ src: "./assets/featherly.ttf" });
 const fira_sans = Fira_Sans({ weight: ["400", "700"], subsets: ["latin"] });
 // Define a functional component called "TemplateName" that takes an "event" object as a prop
-function TemplateName({ data: event }: { data: InvitationDetails}) {
+function TemplateName({ event }: { event: InvitationDetails}) {
   // Define default theme data
  
-  const { theme } = event;
-
-  // Check if the background is a color (starts with "#")
-  const isColor = theme?.background.includes("#", 0);
-
-
   const date = new Date(event?.date)
   const day = date.getDay();
   const month = date.getMonth() + 1;
@@ -40,7 +33,6 @@ function TemplateName({ data: event }: { data: InvitationDetails}) {
             <div
               style={{
                 color: "#fff",
-                textShadow: `2px 1px 0px ${theme.color}`,
               }}
               className={`px-8 text-center z-10 font-bold text-2xl  flex ${fira_sans.className} gap-x-4 sm:gap-x-10 lg:gap-x-8`}>
               <p>

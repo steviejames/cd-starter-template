@@ -7,11 +7,11 @@ const nameFont = Pacifico({ subsets: ["latin"], weight: "400" });
 const ageFont = Playfair_Display({ subsets: ["latin"], weight: "400" });
 const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 
-const Flower = ({ data, theme }: any) => {
+const Flower = ( {event }: {event: InvitationDetails}) => {
   const [imageIsDark, setIsDark] = useState<any>();
   const darkText = "text-[#696861]";
   const lightText = "text-[#fff]";
-  const date = new Date(data.date);
+  const date = new Date(event.date);
   const weekDay = date.getDay();
   const year = date.getFullYear();
   const month = date.getMonth().toString().padStart(1, "0");
@@ -20,7 +20,6 @@ const Flower = ({ data, theme }: any) => {
   return (
     <div
       style={{
-        backgroundImage: `url(${theme?.background})`,
         backgroundSize: "cover",
         resize: "both",
         backgroundRepeat: "no-repeat",
@@ -36,13 +35,13 @@ const Flower = ({ data, theme }: any) => {
           ANIVERSÁRIO
         </p>
           <p className={`sm:text-8xl text-6xl  ${nameFont.className}`}>
-            {data.host}
+            {event.host}
           </p>
           <p
             className={
               "sm:text-8xl text-6xl lowercase font-thin " + ageFont.className
             }>
-            {data.age} anos
+            {event.age} anos
           </p>
         </div>
 
@@ -53,14 +52,14 @@ const Flower = ({ data, theme }: any) => {
             <p>
               {monthDay} | {month + 1} | {year}
             </p>
-            <p>{data.time}</p>
+            <p>{event.time}</p>
           </div>
           <div className='gap-y-1 border-t sm:border-t-0 mt-4 sm:mt-auto sm:border-l pl-4 border-[#4d5f50] sm:text-right text-center '>
             <p className='sm:text-left text-center mt-4 sm:mt-0'>
-              {data.place}
+              {event.place}
             </p>
             <p className='sm:text-left text-center mt-4 sm:mt-0'>
-              {data.address}
+              {event.address}
             </p>
           </div>
         </div>

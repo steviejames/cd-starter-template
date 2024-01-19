@@ -15,8 +15,7 @@ const myFont = Abhaya_Libre({
 
 const grenze = Grenze({ subsets: ["latin"], weight: "400" });
 
-function DefaultPage({ data }: { data: any }) {
-  const event = data;
+function DefaultPage({ event }: { event: InvitationDetails }) {
   const bg = "#000";
   const colors = {
     primary: "#fea514",

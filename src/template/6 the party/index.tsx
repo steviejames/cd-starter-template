@@ -1,7 +1,7 @@
 import React from "react";
 import { Homemade_Apple } from "next/font/google";
 const tag_font = Homemade_Apple({ subsets: ["latin"], weight: "400" });
-function ThePartyTemplate({ data: event }: { data: any }) {
+function ThePartyTemplate({ event }: { event: InvitationDetails }) {
   //@ts-ignore
   const { theme } = event;
   const isColor = theme?.background?.includes("#", 0);

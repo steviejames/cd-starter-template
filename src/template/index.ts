@@ -7,7 +7,7 @@ import Template6 from "./6 the party"
 import Template7 from "./7 Black and yellow"
 import Template8 from "./8 save the the simple"
 import Template9 from "./9 ivory card"
-
+import Template10 from './10 wedding blue'
 export default [{
     name: "Suzana",
     component: Template1
@@ -35,6 +35,10 @@ export default [{
 }, {
     name: "Cartão de marfim",
     component: Template9
+}
+, {
+    name: "Wedding blue",
+    component: Template10
 }
 
 ]
