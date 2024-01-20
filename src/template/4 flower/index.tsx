@@ -8,9 +8,7 @@ const ageFont = Playfair_Display({ subsets: ["latin"], weight: "400" });
 const montserrat = Montserrat({ subsets: ["latin"], weight: "400" });
 
 const Flower = ( {event }: {event: InvitationDetails}) => {
-  const [imageIsDark, setIsDark] = useState<any>();
   const darkText = "text-[#696861]";
-  const lightText = "text-[#fff]";
   const date = new Date(event.date);
   const weekDay = date.getDay();
   const year = date.getFullYear();
@@ -25,7 +23,7 @@ const Flower = ( {event }: {event: InvitationDetails}) => {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         objectFit: "contain",
-        color: imageIsDark ? lightText : darkText,
+        color: darkText,
       }}
       className={`flex bg-white flex-1 min-h-[100dvh]  items-center justify-center  `}>
       <div className='max-w-4xl p-8 h-fit mx-auto flex flex-col gap-y-8 b items-center'>
@@ -46,19 +44,19 @@ const Flower = ( {event }: {event: InvitationDetails}) => {
         </div>
 
 
-        <div className='grid sm:grid-cols-2 grid-cols-1 w-full sm:max-w-2xl rounded uppercase bg-black/5 p-8 gap-x-4 '>
-          <div className='gap-y-1 flex items-center justify-around sm:block sm:text-right text-center '>
+        <div className='grid  grid-cols-2 w-full max-w-2xl rounded uppercase bg-black/5 p-8 gap-x-4 '>
+          <div className='gap-y-1 block text-right '>
             
             <p>
               {monthDay} | {month + 1} | {year}
             </p>
             <p>{event.time}</p>
           </div>
-          <div className='gap-y-1 border-t sm:border-t-0 mt-4 sm:mt-auto sm:border-l pl-4 border-[#4d5f50] sm:text-right text-center '>
-            <p className='sm:text-left text-center mt-4 sm:mt-0'>
+          <div className='gap-y-1 mt-auto border-l pl-4 border-[#4d5f50] text-right '>
+            <p className='text-left'>
               {event.place}
             </p>
-            <p className='sm:text-left text-center mt-4 sm:mt-0'>
+            <p className='text-left '>
               {event.address}
             </p>
           </div>

@@ -34,17 +34,16 @@ const dateString = `${week[day]}, ${monthDay} de ${months[month]} ás ${event.ti
         }}
         className={'max-w-xl mx-auto relative ' + montserrat.className}>
         <div className='text-gray-200 flex flex-col items-center  justify-center absolute top-0 bottom-0 left-0 right-0'>
-          <div className='p-14 flex flex-col text-8xl sm:text-9xl sm:font-black'>
+          <div className='p-14 flex flex-col  text-8xl sm:text-9xl sm:font-black'>
             <h1 className={`text-center text-[#F2C6C2]  ${titleFont.className}`}>Let's</h1>
             <h1 className={`text-center text-[#F2C6C2] ${titleFont.className}`}>Party</h1>
           </div>
           <div className=" text-center">
             <h1 className={`text-xl sm:text-3xl mb-4 uppercase font-bold `}>Aniversário da {event.host}</h1>
-            <h1 className={`text-lg mb-4 italic uppercase font-bold `}>{event.subtitle}</h1>
             <h1 className={`sm:text-xl`}>{dateString}</h1>
             <h1 className={`sm:text-xl  `}>{event.place}</h1>
-            <h1 className={`sm:text-xl   `}>{event.address}</h1>
           </div>
+            <h1 className={`text-xl mt-1 italic  ${titleFont.className}`}>{event.subtitle}</h1>
         </div>
         <Image
           src={frame}
@@ -52,9 +51,7 @@ const dateString = `${week[day]}, ${monthDay} de ${months[month]} ás ${event.ti
           height={1000}
           quality={100}
           alt='frame'
-          style={{
-           // width: "100%",
-          }}
+          
         />
       </div>
     </div>

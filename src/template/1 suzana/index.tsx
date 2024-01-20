@@ -68,13 +68,13 @@ function TemplateName({ event }: { event: InvitationDetails}) {
               className={` text-4xl sm:text-6xl text-center  bg-gradient-to-r from-pink-300 to-pink-500 bg-clip-text text-transparent`}>
               {event?.title}
             </h1>
-            <h1
+           {event.subtitle && <h1
               style={{
                 textShadow: "1px 1px 20px #fff",
               }}
-              className={`${featherly.className} hidden text-4xl sm:text-6xl text-center font-semibold animate-pulse`}>
+              className={`${featherly.className}  text-4xl sm:text-6xl text-center font-semibold animate-pulse`}>
              " {event?.subtitle}"
-            </h1>
+            </h1>}
           </div>
           
         </main>

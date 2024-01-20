@@ -121,12 +121,7 @@ function DefaultPage({ event }: { event: InvitationDetails }) {
           </p>
         </div>
       </div>
-      <div className='flex  max-w-xl gap-2 py-4 items-start '>
-        <FaMapPin className='text-red mt-2' size={25} color='' />
-        <p className={`${grenze.className} text-3xl `}>
-          {event.place} - {event.address}
-        </p>
-      </div>
+    
     </div>
   );
 }

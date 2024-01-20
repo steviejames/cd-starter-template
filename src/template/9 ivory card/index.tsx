@@ -23,7 +23,7 @@ function TemplateName({ event }: { event: InvitationDetails }) {
         style={{ color: color, backgroundColor: bg }}
         className={`relative flex  h-full max-h-screen overflow-hidden  flex-col text-[${color}]  items-center justify-center max-w-full`}>
         <main className='absolute top-0 bottom-0 space-y-4 h-full w-full  px-4 py-8 sm:p-8 flex items-center justify-center flex-col'>
-          <div className={`flex flex-col w-full max-w-3xl `}>
+          <div className={`flex flex-col w-full max-w-3xl px-4 `}>
             <div className={`${anticFont.className} font-serif`}>
               <div className='w-[1px] bg-black h-14 ml-4'></div>
               <h1 className='text-7xl'>SAVE</h1>
