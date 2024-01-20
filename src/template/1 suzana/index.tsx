@@ -1,3 +1,10 @@
+/**
+ * @author Sílvio Dumba
+ * @website https://github.com/steviejames
+ * @description
+ * This is the index file for the Ivory Card template.
+ */
+
 "use client";
 "./style.module.css";
 import React from "react";

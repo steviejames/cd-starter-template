@@ -1,3 +1,10 @@
+/**
+ * @author Sílvio Dumba
+ * @website https://github.com/steviejames
+ * @description
+ * This is the index file for the Ivory Card template.
+ */
+
 import React from "react";
 import { Caveat } from "next/font/google";
 import { Righteous } from "next/font/google";

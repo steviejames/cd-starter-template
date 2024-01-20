@@ -1,3 +1,10 @@
+/**
+ * @author Sílvio Dumba
+ * @website https://github.com/steviejames
+ * @description
+ * This is the index file for the Ivory Card template.
+ */
+
 import React from "react";
 import { Dancing_Script } from "next/font/google";
 import { week } from "@/utils/constant";

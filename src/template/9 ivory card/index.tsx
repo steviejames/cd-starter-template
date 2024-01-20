@@ -1,15 +1,19 @@
+/**
+ * @author Sílvio Dumba
+ * @website https://github.com/steviejames
+ * @description
+ * This is the index file for the Ivory Card template.
+ */
+
 "use client";
 "./style.module.css";
 import React from "react";
-import localFont from "next/font/local";
 import { Antic_Didone } from "next/font/google";
-import { FiArrowDownCircle } from "react-icons/fi";
 const anticFont = Antic_Didone({
   weight: "400",
   subsets: ["latin"],
 });
-function TemplateName({ event }: { event: InvitationDetails }) {
-  
+function IvoryCard({ event }: { event: InvitationDetails }) {
   // Extract day, month, and year from the event date
   const day = new Date(event?.date).getDay();
   const month = new Date(event?.date).getMonth() + 1;
@@ -47,4 +51,4 @@ function TemplateName({ event }: { event: InvitationDetails }) {
   );
 }
 
-export default TemplateName;
+export default IvoryCard;
