@@ -6,7 +6,7 @@ import { Fira_Sans } from "next/font/google";
 import Image from "next/image";
 import image from "./suzana.png";
 import { FiArrowDownCircle } from "react-icons/fi";
-const featherly = localFont({ src: "./assets/featherly.ttf" });
+const featherly = localFont({ src: "./featherly.ttf" });
 const fira_sans = Fira_Sans({ weight: ["400", "700"], subsets: ["latin"] });
 // Define a functional component called "TemplateName" that takes an "event" object as a prop
 function TemplateName({ event }: { event: InvitationDetails}) {
@@ -65,15 +65,15 @@ function TemplateName({ event }: { event: InvitationDetails}) {
               style={{
                 textShadow: "2px 1px #fff",
               }}
-              className={`${featherly.className} text-4xl sm:text-6xl text-center  bg-gradient-to-r from-pink-300 to-pink-500 bg-clip-text text-transparent`}>
+              className={` text-4xl sm:text-6xl text-center  bg-gradient-to-r from-pink-300 to-pink-500 bg-clip-text text-transparent`}>
               {event?.title}
             </h1>
             <h1
               style={{
                 textShadow: "1px 1px 20px #fff",
               }}
-              className={`${featherly.className} text-4xl sm:text-6xl text-center font-semibold animate-pulse`}>
-              {event?.subtitle}
+              className={`${featherly.className} hidden text-4xl sm:text-6xl text-center font-semibold animate-pulse`}>
+             " {event?.subtitle}"
             </h1>
           </div>
           
