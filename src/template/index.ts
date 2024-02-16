@@ -8,6 +8,11 @@ import Template7 from "./7 Black and yellow"
 import Template8 from "./8 save the the simple"
 import Template9 from "./9 ivory card"
 import Template10 from './10 wedding blue'
+import Template11 from './11 Aniversário infantil colorido'
+import Template12 from './12 Convite festa infantil floresta divertido aquarela femenino'
+import Template13 from './13 Convite festa infantil floresta divertido aquarela masculino'
+import Template14 from './14  flores verdes'
+import Template15 from './15 Chá revelação'
 export default [{
     name: "Suzana",
     component: Template1
@@ -39,6 +44,26 @@ export default [{
 , {
     name: "Wedding blue",
     component: Template10
+}
+, {
+    name: "Convite festa infantil floresta divertido aquarela azul",
+    component: Template11
+}
+, {
+    name: "Convite festa infantil floresta divertido aquarela rosa",
+    component: Template12
+}
+, {
+    name: "Convite festa infantil floresta divertido aquarela rosa",
+    component: Template13
+}
+, {
+    name: "Convite festa flores verdes",
+    component: Template14
+}
+, {
+    name: "Convite para chá de bebê",
+    component: Template15
 }
 
 ]

@@ -6,9 +6,9 @@ import Header from "@/components/Header";
 function Page() {
   return (
     <div>
-      <Header/>
+     
       {templates.map((item, i) => (
-        <Link href={`/${i}`}>
+        <Link key={i} href={`/${i}`}>
           <p>{item.name}</p>
         </Link>
       ))}

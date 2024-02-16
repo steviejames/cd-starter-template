@@ -26,7 +26,7 @@ function page({params}:{params:{id:number}}) {
   );
 
 
-  return <div><p>Template não localizado</p></div>
+  return <div><p>Template não localizado</p> <a href="">Voltar</a> </div>
 }
 
 export default page;
