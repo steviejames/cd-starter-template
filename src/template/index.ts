@@ -13,6 +13,7 @@ import Template12 from './12 Convite festa infantil floresta divertido aquarela 
 import Template13 from './13 Convite festa infantil floresta divertido aquarela masculino'
 import Template14 from './14  flores verdes'
 import Template15 from './15 Chá revelação'
+import Template16 from './14 wedding-dorado'
 export default [{
     name: "Suzana",
     component: Template1
@@ -64,6 +65,10 @@ export default [{
 , {
     name: "Convite para chá de bebê",
     component: Template15
+}
+, {
+    name: "Convite de casamento pro dourado",
+    component: Template16
 }
 
 ]
