@@ -11,4 +11,6 @@ interface InvitationDetails {
     infoline: string;
     host: string;
     dresscode: string;
+    weddingDetails: any
+    videoUrl:string
 };

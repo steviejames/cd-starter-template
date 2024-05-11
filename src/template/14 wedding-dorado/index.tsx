@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Inter,
@@ -25,7 +26,9 @@ import {
   Info,
 } from "lucide-react";
 import Link from "next/link";
-type Props = {};
+type Props = {
+  event: InvitationDetails;
+};
 
 const TTCommons = Raleway({
   weight: "400",
@@ -39,29 +42,29 @@ const inter = Inter({
 });
 
 const libreBasker = Libre_Baskerville({ weight: "700", subsets: ["latin"] });
-function page({}: Props) {
-  const colors = {
-    main: "#82593D",
-    white: "#ffffff",
-    icons: "684127",
-    orange: "#C6782F",
-    pinkgold: "#F0E6DF",
-  };
-  /**
-   * FONTES
-   *Le Jour Serif, TT Commons, Inter
-   */
+
+function page({ event,  }: Props) {
+  const couple = event.host.split(" ");
+  const date = new Date(event.date);
+
   return (
-    <div
-      className='bg-[#F0E6DF] relative min-h-screen '
-      style={{
-        backgroundImage: `url(${require("./bg-image.png")})`,
-        backgroundSize: "cover",
-        backgroundRepeat:"no-repeat",
-        backgroundPosition:"center"
-        
-      }}>
-      <div className={`overflow-hidden   flex-1 relative`}>
+    <div className='bg-[#F0E6DF] relative min-h-screen '>
+      <Image
+        src={bgOverlay}
+        alt='flower'
+        width={500}
+        height={500}
+        className='w-full h-full opacity-60 z-0 absolute top-0 right-0 left-0 bottom-0'
+        quality={100}
+      />
+      <div
+        style={{
+          backgroundImage: `url(${require("./bg-image.png")})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+        className={`overflow-hidden   flex-1 relative`}>
         <Image
           data-aos='zoom-in'
           data-aos-duration='1000'
@@ -90,7 +93,7 @@ function page({}: Props) {
               data-aos-duration='1000'
               data-aos-mirror='true'
               data-aos-once='false'>
-              R
+              {couple[0]?.slice(0, 1)}
             </h1>
             <h1
               data-aos='zoom-in-right'
@@ -99,7 +102,7 @@ function page({}: Props) {
               data-aos-mirror='true'
               data-aos-once='false'
               data-aos-anchor-placement='top-center'>
-              S
+              {couple[1]?.slice(0, 1)}
             </h1>
           </div>
           <div
@@ -119,7 +122,7 @@ function page({}: Props) {
             </div>
             <h2
               className={`${libreBasker.className} text-4xl text-[#82593D] uppercase`}>
-              Regina e Sílvio
+              {`${couple[0]} e ${couple[1]}`}
             </h2>
             <h2 className={`${libreBasker.className} text-lg text-[#82593D]`}>
               Convite de Casamento
@@ -149,12 +152,11 @@ function page({}: Props) {
           data-aos-anchor-placement='center'
           className='py-6 z-30  [&>*]:-z-30 px-10 text-[#82593D]'>
           <p className={`${TTCommons.style} text-center italic`}>
-            “Deixará o homem seu pai e sua mãe, unir-se-á à sua esposa e serão
-            uma só carne”
+            “{event.weddingDetails?.citation?.text}”
           </p>
           <p
             className={`${TTCommons.style} text-center italic font-bold uppercase`}>
-            Marcos 10:7
+            {event.weddingDetails?.citation?.author}
           </p>
         </section>
         <div
@@ -184,7 +186,7 @@ function page({}: Props) {
                 data-aos-mirror='true'
                 data-aos-once='false'
                 data-aos-anchor-placement='top-center'>
-                R
+                {couple[0]?.slice(0, 1)}
               </h1>
               <h1
                 data-aos='zoom-in-right'
@@ -193,7 +195,7 @@ function page({}: Props) {
                 data-aos-mirror='true'
                 data-aos-once='false'
                 data-aos-anchor-placement='top-center'>
-                S
+                {couple[1]?.slice(0, 1)}
               </h1>
             </div>
             <div
@@ -212,12 +214,9 @@ function page({}: Props) {
                 <FaStar color='82593D' size={16} />
               </div>
               <h2 className={` text-3xl text-[#82593D] uppercase`}>
-                Regina & Sílvio
+                {`${couple[0]} e ${couple[1]}`}
               </h2>
-              <h2 className={` text-lg text-[#82593D]`}>
-                Com a bênção de Deus e de nossos pais convidamos você para o
-                nosso casamento a ser realizado no dia:
-              </h2>
+              <h2 className={` text-lg text-[#82593D]`}>{event.subtitle}</h2>
             </div>
             <div
               data-aos='zoom-in'
@@ -230,19 +229,21 @@ function page({}: Props) {
                 data-aos-once='false'
                 data-aos-anchor-placement='center'
                 className={`flex flex-col items-center`}>
-                <h2 className={` text-3xl text-[#C6782F] uppercase`}>10 de</h2>
-                <h2 className={` text-3xl text-[#C6782F] uppercase`}>Junho</h2>
+                <h2 className={` text-3xl text-[#C6782F] uppercase`}>
+                  {date.getDate()} de
+                </h2>
+                <h2 className={` text-3xl text-[#C6782F] uppercase`}>
+                  {date.toLocaleDateString("pt-AO", { month: "long" })}
+                </h2>
               </div>
-              <span 
-              data-aos='zoom-out'
-              data-aos-delay='50'
-              data-aos-duration='1000'
-              data-aos-mirror='true'
-              data-aos-once='false'
-              data-aos-anchor-placement='center'
-              className='w-1 h-[60px] max-h-full bg-[#82593D] flex-1'>
-               
-              </span>
+              <span
+                data-aos='zoom-out'
+                data-aos-delay='50'
+                data-aos-duration='1000'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                className='w-1 h-[60px] max-h-full bg-[#82593D] flex-1'></span>
               <div
                 data-aos='fade-right'
                 data-aos-delay='50'
@@ -253,12 +254,12 @@ function page({}: Props) {
                 className={`flex flex-col items-center`}>
                 <h2 className={` text-3xl text-[#C6782F] uppercase`}>Às</h2>
                 <h2 className={` text-3xl text-[#C6782F] uppercase`}>
-                  19 horas
+                  {event.time.split(":")[0]} horas
                 </h2>
               </div>
             </div>
 
-            <div className='flex items-center gap-6 text-[#82593D] mt-8'>
+            <div className='flex items-center gap-6 text-[#82593D] mt-8 font-light'>
               <div
                 data-aos='zoom-in-up'
                 data-aos-delay='50'
@@ -267,20 +268,12 @@ function page({}: Props) {
                 data-aos-once='false'
                 data-aos-anchor-placement='center'
                 className='flex justify-center flex-col items-center'>
-                <GemIcon size={60} className='p-2 cursor-pointer' />
-                <p>Noivos</p>
+                <Link href={String(event.videoUrl)} target='_blank'>
+                  <GemIcon size={60} className='p-2 cursor-pointer' />
+                  <p>Noivos</p>
+                </Link>
               </div>
-              <div
-                data-aos='zoom-in-up'
-                data-aos-delay='50'
-                data-aos-duration='1250'
-                data-aos-mirror='true'
-                data-aos-once='false'
-                data-aos-anchor-placement='center'
-                className='flex justify-center flex-col items-center'>
-                <CircleCheck size={60} className='p-2  cursor-pointer' />
-                <p>Confirmação</p>
-              </div>
+             
               <div
                 data-aos='zoom-in-up'
                 data-aos-delay='50'
@@ -288,18 +281,18 @@ function page({}: Props) {
                 data-aos-mirror='true'
                 data-aos-once='false'
                 data-aos-anchor-placement='center'
-                className='flex justify-center flex-col items-center'>
-                <Link href={"#details"}>
-                <Info size={60} className='p-2 cursor-pointer' />
+               >
+                <Link  className='flex justify-center flex-col items-center' href={"#details"}>
+                  <Info size={60} className='p-2 cursor-pointer' />
 
-                <p>Detalhes</p>
+                  <p>Informações</p>
                 </Link>
               </div>
             </div>
           </div>
           <Image
-          data-aos='zoom-in'
-          data-aos-offset="0"
+            data-aos='zoom-in'
+            data-aos-offset='0'
             src={flowers2}
             alt='flower'
             width={500}
@@ -308,143 +301,214 @@ function page({}: Props) {
             quality={100}
           />
         </div>
-      <div id="details" className={`flex flex-col items-center py-16 text-[#82593D] space-y-4 text-4xl ${libreBasker.className} `}>
-        <h1 data-aos="zoom-in" className={`uppercase text-center`}>Informações</h1>
-        <div className="flex flex-col space-y-2">
-        <div className="flex flex-col items-center space-y-2 text-center px-6 py-12">
-          <Image
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='800'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          alt="Tribunal" width={100} height={100} quality={100} className="w-full h-auto max-w-[50px]" src={require("./court.png")} />
-          <h2
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='1000'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          className="text-2xl">Ato civíl</h2>
-          <p 
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='1200'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          className="text-lg">
-          7ª conservatória, rua direta da samba  junto do posto policial do calçadão.
-          </p>
-          <Link
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='1400'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          href={""} target="_blank" className="underline text-sm text-[#C6782F]">Abrir no mapa</Link>
+        <div
+          id='details'
+          className={`flex h-full flex-col items-center py-16 text-[#82593D] space-y-4 text-4xl ${libreBasker.className} `}>
+          <h1 data-aos='zoom-in' className={`uppercase text-center`}>
+            Informações
+          </h1>
+          <div className='flex flex-col space-y-2'>
+            <div className='flex flex-col items-center space-y-2 text-center px-6 py-12'>
+              <Image
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='800'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                alt='Tribunal'
+                width={100}
+                height={100}
+                quality={100}
+                className='w-full h-auto max-w-[50px]'
+                src={require("./court.png")}
+              />
+              <h2
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='1000'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                className='text-2xl'>
+                Ato civíl
+              </h2>
+              <p
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='1200'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                className='text-lg'>
+                {`${event?.weddingDetails?.civil?.place}, ${event?.weddingDetails?.civil?.address}`}
+              </p>
+              <Link
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='1400'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                href={""}
+                target='_blank'
+                className='underline text-sm text-[#C6782F]'>
+                Abrir no mapa
+              </Link>
+            </div>
+            <Image
+              data-aos='zoom-in'
+              data-aos-once='false'
+              data-aos-duration='1000'
+              src={flower}
+              alt='flower'
+              width={500}
+              height={500}
+              className='w-full z-10 mx-auto max-w-[150px] lg:max-w-xs -bottom-52 -rotate-[90deg] lg:-right-12 -mt-36 lg:-mt-52'
+              quality={100}
+            />
+            <div className='flex flex-col items-center space-y-2 text-center px-6 py-12'>
+              <Image
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='800'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                alt='Tribunal'
+                width={100}
+                height={100}
+                quality={100}
+                className='w-full h-auto max-w-[50px]'
+                src={require("./Church.png")}
+              />
+              <h2
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='1000'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                className='text-2xl'>
+                Cerimónia religiosa
+              </h2>
+              <p
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='1200'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                className='text-lg'>
+                {`${event?.weddingDetails?.cerimony?.place}, ${event?.weddingDetails?.cerimony?.address}`}
+              </p>
+              <Link
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='1400'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                href={""}
+                target='_blank'
+                className='underline text-sm text-[#C6782F]'>
+                Abrir no mapa
+              </Link>
+            </div>
+            <Image
+              data-aos='zoom-in'
+              data-aos-duration='1000'
+              src={flower}
+              alt='flower'
+              width={500}
+              height={500}
+              className='w-full z-10 mx-auto max-w-[150px] lg:max-w-xs -bottom-52 -rotate-[90deg] lg:-right-12 -mt-36 lg:-mt-52'
+              quality={100}
+            />
+            <div className='flex flex-col items-center space-y-2 text-center px-6 py-12'>
+              <Image
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='800'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                alt='Tribunal'
+                width={100}
+                height={100}
+                quality={100}
+                className='w-full h-auto max-w-[50px]'
+                src={require("./court.png")}
+              />
+              <h2
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='1000'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                className='text-2xl'>
+                Copo d'Água
+              </h2>
+              <p
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='1200'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                className='text-lg'>
+                {`${event?.place}, ${event?.address}`}
+              </p>
+              <Link
+                data-aos='zoom-in-up'
+                data-aos-delay='50'
+                data-aos-duration='1400'
+                data-aos-mirror='true'
+                data-aos-once='false'
+                data-aos-anchor-placement='center'
+                href={""}
+                target='_blank'
+                className='underline text-sm text-[#C6782F]'>
+                Abrir no mapa
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className='flex items-center gap-6 text-[#82593D] mx-auto flex-1 justify-center pt-10'>
+          <div
+            data-aos='zoom-in-up'
+            data-aos-delay='50'
+            data-aos-duration='1000'
+            data-aos-mirror='true'
+            data-aos-once='false'
+            data-aos-anchor-placement='center'>
+            <Link
+              className='flex justify-center flex-col items-center'
+              href={String(event.videoUrl)}
+              target='_blank'>
+              <GemIcon size={60} className='p-2 cursor-pointer' />
+              <p>Noivos</p>
+            </Link>
+          </div>
+         
+          <div
+            data-aos='zoom-in-up'
+            data-aos-delay='50'
+            data-aos-duration='1500'
+            data-aos-mirror='true'
+            data-aos-once='false'
+            data-aos-anchor-placement='center'>
+            <Link
+              className='flex justify-center flex-col items-center'
+              href={"#details"}>
+              <Info size={60} className='p-2 cursor-pointer' />
+
+              <p>Informações</p>
+            </Link>
+          </div>
         </div>
         <Image
-         data-aos="zoom-in"
-         data-aos-once="false"
-         data-aos-duration='1000'
-
-            src={flower}
-            alt='flower'
-            width={500}
-            height={500}
-            className='w-full z-10 mx-auto max-w-[150px] lg:max-w-xs -bottom-52 -rotate-[90deg] lg:-right-12 -mt-36 lg:-mt-52'
-            quality={100}
-          />
-      <div className="flex flex-col items-center space-y-2 text-center px-6 py-12">
-          <Image
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='800'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          alt="Tribunal" width={100} height={100} quality={100} className="w-full h-auto max-w-[50px]" src={require("./Church.png")} />
-          <h2
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='1000'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          className="text-2xl">Cerimónia religiosa</h2>
-          <p 
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='1200'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          className="text-lg">
-          7ª conservatória, rua direta da samba  junto do posto policial do calçadão.
-          </p>
-          <Link
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='1400'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          href={""} target="_blank" className="underline text-sm text-[#C6782F]">Abrir no mapa</Link>
-        </div>
-        <Image
-         data-aos="zoom-in"
-         data-aos-duration='1000'
-
-         src={flower}
-         alt='flower'
-         width={500}
-         height={500}
-         className='w-full z-10 mx-auto max-w-[150px] lg:max-w-xs -bottom-52 -rotate-[90deg] lg:-right-12 -mt-36 lg:-mt-52'
-         quality={100}
-       />
-     <div className="flex flex-col items-center space-y-2 text-center px-6 py-12">
-          <Image
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='800'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          alt="Tribunal" width={100} height={100} quality={100} className="w-full h-auto max-w-[50px]" src={require("./court.png")} />
-          <h2
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='1000'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          className="text-2xl">Copo d'Água</h2>
-          <p 
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='1200'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          className="text-lg">
-          7ª conservatória, rua direta da samba  junto do posto policial do calçadão.
-          </p>
-          <Link
-          data-aos='zoom-in-up'
-          data-aos-delay='50'
-          data-aos-duration='1400'
-          data-aos-mirror='true'
-          data-aos-once='false'
-          data-aos-anchor-placement='center'
-          href={""} target="_blank" className="underline text-sm text-[#C6782F]">Abrir no mapa</Link>
-        </div>
-        </div>
-      </div>
-      <Image
           data-aos='zoom-in'
           data-aos-duration='1000'
           data-aos-delay='50'
