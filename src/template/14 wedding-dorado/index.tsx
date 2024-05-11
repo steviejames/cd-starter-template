@@ -17,9 +17,7 @@ const TTCommons = Raleway({
   fallback: ["Arial", "non-serif"],
   subsets: ["latin", "latin-ext"]
 })
-const leJourSerif = localFont({
-  src: "./Le Jour Serif.ttf"
-})
+
 const whisper = Whisper({ weight: "400", subsets: ["latin"] })
 const inter = Inter({
   subsets: ["latin", "latin-ext"]
@@ -70,7 +68,7 @@ function page({ }: Props) {
            data-aos-duration="1000"
            data-aos-mirror="true"
            data-aos-once="true"
-           data-aos-anchor-placement="top-center"
+           data-aos-anchor-placement="center"
            className=' text-center [&>*]:z-20 mt-8 px-4'>
             <div className='flex my-2 justify-center items-center gap-x-2'>
               <FaStar color='82593D' size={16} />
@@ -112,7 +110,7 @@ function page({ }: Props) {
 
             </div>
             <h2 className={` text-3xl text-[#82593D] uppercase`}>Regina & Sílvio</h2>
-            <h2 className={`${leJourSerif.style} text-lg text-[#82593D]`}>Com a bênção de Deus e de nossos pais convidamos você para o nosso casamento a ser realizado no dia:</h2>
+            <h2 className={` text-lg text-[#82593D]`}>Com a bênção de Deus e de nossos pais convidamos você para o nosso casamento a ser realizado no dia:</h2>
           </div>
           <div className={`mt-8 text-center [&>*]:z-20 px-4 ${libreBasker.className} flex gap-x-4 items-center`}>
 
