@@ -1,3 +1,4 @@
+import AnimateOnScrollProvider from "@/components/AnimateOnScrollProvider";
 import "./globals.css";
 import { Metadata } from "next";
 
@@ -12,9 +13,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: IProps) {
+
   return (
     <html className="h-full" lang="pt-PT">
-      <body className="h-full">{children}</body>
+      <body className="h-full">
+        <AnimateOnScrollProvider>
+          {children}
+        </AnimateOnScrollProvider>
+      </body>
     </html>
   );
 }
